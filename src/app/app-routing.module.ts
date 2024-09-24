@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RegistrarModule } from './registrar/registrar.module';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  { path:'registrar', loadChildren: () => import('./registrar/registrar.module').then(m => m.RegistrarModule)},
 ];
 
 @NgModule({
