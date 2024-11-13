@@ -37,7 +37,13 @@
             ¿No estás registrado? 
           </ion-text>
           <ion-button [routerLink]="['/registrar']">Regístrate aquí</ion-button>
-          <router-outlet></router-outlet>
+
+          <!-- Botón para abrir GpsTracking en nueva pestaña -->
+          <a href="/gps-tracking" target="_blank" style="text-decoration: none;">
+            <ion-button color="secondary" expand="block" class="ion-margin-top">
+              Ver Mapa de Seguimiento GPS
+            </ion-button>
+          </a>
         </div>
       </ion-card-content>
     </ion-card>

@@ -9,16 +9,14 @@ app.use(bodyParser.json());
 
 // Configura la conexión a SQL Server
 const config = {
-    user: 'sa',
-    password: 'tesina2024',
-    server: '172.16.134.107', // Dirección IP del servidor SQL
-    port: 4500, // Especifica el puerto aquí, si no usas el puerto predeterminado
-    database: 'hola', // Reemplaza con tu base de datos
-    options: {
-        encrypt: true, // Usar true si estás en Azure
-        trustServerCertificate: true, // Cambia a 'false' en producción si tienes un certificado válido
-        instanceName: 'SQLEXPRESS' // Especifica el nombre de la instancia
-    }
+  user: "sa",
+  password: "12345",
+  server: "localhost",
+  database: "app",
+  options: {
+      encrypt: false,
+      trustServerCertificate: true,
+  },
 };
 
 // Ruta para la raíz del servidor
@@ -43,9 +41,29 @@ app.get('/api/empleados', async (req, res) => {
   }
 });
 
+// Ruta para obtener las rutas de los conductores
+app.get('/api/rutas', async (req, res) => {
+  try {
+    await sql.connect(config);
+    const result = await sql.query`
+      SELECT latitud, longitud, id_conductor
+      FROM rutas
+      ORDER BY id_conductor, id`;
+    
+    const rutas = result.recordset;
+    if (rutas.length > 0) {
+      res.send(rutas);
+    } else {
+      res.status(404).send({ message: 'No se encontraron rutas' });
+    }
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
 
 // Inicia el servidor
 const port = process.env.PORT || 3000;
-app.listen(port, '172.16.134.107', () => {
-  console.log(`Servidor corriendo en http://172.16.134.107:${port}`);
+app.listen(port, 'localhost', () => {
+  console.log(`Servidor corriendo en http://localhost:${port}`);
 });

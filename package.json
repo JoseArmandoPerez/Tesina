@@ -21,7 +21,8 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
-    "@awesome-cordova-plugins/in-app-browser": "^6.8.0",
+    "@awesome-cordova-plugins/core": "^6.9.0",
+    "@awesome-cordova-plugins/in-app-browser": "^6.9.0",
     "@capacitor/android": "6.1.2",
     "@capacitor/app": "6.0.1",
     "@capacitor/core": "6.1.2",
@@ -34,7 +35,10 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "ionicons": "^7.0.0",
+    "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.8.0",
     "mssql": "^11.0.1",
+    "ol": "^10.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -52,6 +56,7 @@
     "@capacitor/cli": "6.1.2",
     "@ionic/angular-toolkit": "^11.0.1",
     "@types/jasmine": "~5.1.0",
+    "@types/leaflet": "^1.9.14",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.57.0",
@@ -67,6 +72,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "^5.1.6"
   },
-  "type": "module",  
+  "type": "module",
   "description": "An Ionic project"
 }

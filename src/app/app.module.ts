@@ -7,16 +7,18 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegistrarModule } from './registrar/registrar.module';
-
+import { GpsTrackingComponent } from './gps-tracking/gps-tracking.component';
+import { GpsTrackingRoutingModule } from './gps-tracking/gps-tracking-routing.module';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,GpsTrackingComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
     FormsModule, // Asegúrate de incluir este módulo
     HttpClientModule, 
-    RegistrarModule
+    RegistrarModule,
+    GpsTrackingRoutingModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
