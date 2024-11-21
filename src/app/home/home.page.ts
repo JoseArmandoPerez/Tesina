@@ -23,14 +23,13 @@ export class HomePage {
 
   async onSubmit() {
     const { id, codigo } = this.loginData;
-
-    // Realiza una solicitud al backend para autenticar
+  
     this.empleadosService.getEmpleadoByIdAndCodigo(id, codigo).subscribe(
       (data) => {
         if (data) {
           this.showAlert('Éxito', 'Login correcto'); // Muestra alerta de éxito
-          // Navega a otra página si es necesario
-          // this.router.navigate(['/otra-pagina']);
+          // Redirige al componente `gps-tracking` con el `id_usuario` en la URL
+          this.router.navigate(['/gps-tracking', data.id_usuario]);
         } else {
           this.showAlert('Error', 'ID o contraseña incorrectos');
         }
@@ -40,6 +39,7 @@ export class HomePage {
       }
     );
   }
+  
 
   async showAlert(header: string, message: string) {
     const alert = await this.alertController.create({

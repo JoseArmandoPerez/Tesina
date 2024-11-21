@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RegistrarModule } from './registrar/registrar.module';
+import { GpsTrackingComponent } from './gps-tracking/gps-tracking.component';
 
 const routes: Routes = [
   {
@@ -17,9 +18,9 @@ const routes: Routes = [
     loadChildren: () => import('./registrar/registrar.module').then(m => m.RegistrarModule)
   },
   {
-    path: 'gps-tracking', // Nueva ruta para el componente
-    loadChildren: () => import('./gps-tracking/gps-tracking.module').then(m => m.GpsTrackingModule)
-  }
+    path: 'gps-tracking/:id_usuario',
+    component: GpsTrackingComponent
+  },
 ];
 
 

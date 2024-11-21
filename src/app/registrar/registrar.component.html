@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Registro
-    </ion-title>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,53 +17,51 @@
         <ion-card-title>Formulario de Registro</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <form>
+        <form (ngSubmit)="registerUser()">
           <ion-item>
-            <ion-label position="floating">ID</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label position="floating">ID Estudiante</ion-label>
+            <ion-input type="number" [(ngModel)]="user.id_estudiante" name="id_estudiante" required></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Nombre</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="user.nombre" name="nombre" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input type="text" [(ngModel)]="user.apellido" name="apellido" required></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Carrera</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="user.carrera" name="carrera"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input type="text" [(ngModel)]="user.direccion" name="direccion"></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Semestre</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="user.semestre" name="semestre"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label position="floating">Grupo</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label position="floating">Turno</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label position="floating">Foto de Perfil URL</ion-label>
+            <ion-input type="url" [(ngModel)]="user.foto_perfil_url" name="foto_perfil_url"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label>¿Tiene vehículo?</ion-label>
-            <ion-toggle></ion-toggle>
+            <ion-label position="floating">Datos Biométricos (URL)</ion-label>
+            <ion-input type="url" [(ngModel)]="user.datos_biometricos" name="datos_biometricos"></ion-input>
           </ion-item>
-
-          <div id="vehiculo-info" style="display: none;">
-            <ion-item>
-              <ion-label position="floating">Placas</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-label position="floating">Tarjeta de circulación</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </div>
 
           <ion-button expand="full" type="submit">Registrar</ion-button>
         </form>
