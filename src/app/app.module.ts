@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegistrarModule } from './registrar/registrar.module';
 import { GpsTrackingComponent } from './gps-tracking/gps-tracking.component';
 import { GpsTrackingRoutingModule } from './gps-tracking/gps-tracking-routing.module';
+import { ChatModule } from './chat/chat.module';
 @NgModule({
   declarations: [AppComponent,GpsTrackingComponent],
   imports: [
@@ -19,6 +20,7 @@ import { GpsTrackingRoutingModule } from './gps-tracking/gps-tracking-routing.mo
     HttpClientModule, 
     RegistrarModule,
     GpsTrackingRoutingModule,
+    ChatModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
